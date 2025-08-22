@@ -5,7 +5,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Wallpaper - Projoy Naidu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Fira Code', monospace;
+            background: linear-gradient(135deg, #0f172a, #111827);
+            color: #e2e8f0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        .wallpaper {
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            padding: 40px;
+            border-radius: 12px;
+            background: rgba(15, 23, 42, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, #60a5fa, #86efac, #f87171, #d8b4fe, #f97316, #2dd4bf);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .developer-name {
+            font-size: 2.2rem;
+            color: #c7d2fe;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            font-weight: 300;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .tech-panel {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-panel:hover {
+            transform: translateY(-5px);
+        }
+        
+        .panel-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .html .logo { background: #e34f26; }
+        .css .logo { background: #264de4; }
+        .js .logo { background: #f7df1e; color: black; }
+        .tailwind .logo { background: #38bdf8; color: black; }
+        .mongodb .logo { background: #4fa94d; }
+        .express .logo { background: #000000; color: white; }
+        
+        .panel-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow: hidden;
+        }
+        
+        .comment { color: #6366f1; }
+        .tag { color: #ef4444; }
+        .attribute { color: #60a5fa; }
+        .value { color: #86efac; }
+        .selector { color: #f87171; }
+        .property { color: #60a5fa; }
+        .function { color: #fbbf24; }
+        .parameter { color: #86efac; }
+        .keyword { color: #c084fc; }
+        
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            color: #94a3b8;
+            transition: color 0.3s ease;
+        }
+        
+        .tech-icon.html:hover { color: #e34f26; }
+        .tech-icon.css:hover { color: #264de4; }
+        .tech-icon.js:hover { color: #f7df1e; }
+        .tech-icon.tailwind:hover { color: #38bdf8; }
+        .tech-icon.mongodb:hover { color: #4fa94d; }
+        .tech-icon.express:hover { color: #68a063; }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 2rem;
+            color: #60a5fa;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .developer-name {
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="wallpaper">
@@ -63,27 +252,6 @@
                 </div>
             </div>
             
-            <div class="tech-panel github">
-                <div class="panel-header">
-                    <div class="logo"><i class="fab fa-github"></i></div>
-                    <h2 class="panel-title">GitHub Repository</h2>
-                </div>
-                <div class="code">
-                    <p><span class="comment"># Create a new repository</span></p>
-                    <p><span class="keyword">git</span> init</p>
-                    <p><span class="keyword">git</span> add .</p>
-                    <p><span class="keyword">git</span> commit -m <span class="value">"Initial commit"</span></p>
-                    <p><span class="keyword">git</span> branch -M main</p>
-                    <p><span class="keyword">git</span> remote add origin</p>
-                    <p><span class="keyword">git</span> push -u origin main</p>
-                    
-                    <div class="repo-options">
-                        <button class="repo-btn public-btn">Create Public Repo</button>
-                        <button class="repo-btn private-btn">Create Private Repo</button>
-                    </div>
-                </div>
-            </div>
-            
             <div class="tech-panel tailwind">
                 <div class="panel-header">
                     <div class="logo"><i class="fab fa-css3-alt"></i></div>
@@ -126,9 +294,7 @@
                     <p>});</p>
                 </div>
             </div>
-
-            <!-- Add more tech panels -->
-                         
+            
             <div class="tech-panel express">
                 <div class="panel-header">
                     <div class="logo">E</div>
@@ -158,7 +324,6 @@
             <div class="tech-icon tailwind"><i class="fas fa-palette"></i></div>
             <div class="tech-icon mongodb"><i class="fas fa-database"></i></div>
             <div class="tech-icon express"><i class="fas fa-server"></i></div>
-            <div class="tech-icon github"><i class="fab fa-github"></i></div>
         </div>
         
         <div class="floating-elements">
@@ -171,9 +336,42 @@
         </div>
         
         <div class="footer">
-            <p>Designed for Projoy Naidu • Full-Stack Developer • HTML • CSS • JavaScript • Tailwind • MongoDB • Express.js • GitHub</p>
+            <p>Designed for Projoy Naidu • Full-Stack Developer • HTML • CSS • JavaScript • Tailwind • MongoDB • Express.js</p>
         </div>
     </div>
-<script src="script.js"></script>
+
+    <script>
+        // Add subtle animation to the floating elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.floating-element');
+            
+            elements.forEach((element, index) => {
+                // Set random initial position and delay for animation
+                const delay = index * 0.7;
+                element.style.animation = `float 8s ${delay}s infinite ease-in-out`;
+                
+                // Add more random floating elements
+                if (index < 10) {
+                    const newElement = element.cloneNode(true);
+                    newElement.style.top = Math.random() * 100 + '%';
+                    newElement.style.left = Math.random() * 100 + '%';
+                    newElement.style.opacity = Math.random() * 0.1;
+                    document.querySelector('.floating-elements').appendChild(newElement);
+                }
+            });
+            
+            // Add animation style
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+                    25% { transform: translate(5px, 10px) rotate(2deg); }
+                    50% { transform: translate(10px, 5px) rotate(-2deg); }
+                    75% { transform: translate(5px, -5px) rotate(1deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
 </body>
 </html>
